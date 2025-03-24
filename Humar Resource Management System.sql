@@ -11,7 +11,7 @@ CREATE TABLE jobs (
     max_salary DECIMAL(10,2)
 );
 
--- employees (Created first to avoid circular dependency)
+-- employees 
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE employees (
     status ENUM('active', 'inactive') DEFAULT 'active'
 );
 
--- departments (Created after employees to avoid FK issue)
+-- departments 
 CREATE TABLE departments (
     department_id INT PRIMARY KEY AUTO_INCREMENT,
     department_name VARCHAR(100) NOT NULL,
@@ -158,7 +158,7 @@ UPDATE departments SET manager_id = 6 WHERE department_id = 5;
 
 -- remaing insertion attenddace  payroll peroformance reviuew
 -- attendance
--- Insert attendance for each employee for 3 weeks (21 days)
+-- Insert attendance for each employee
 INSERT INTO attendance (employee_id, login, logout, status)
 VALUES
 -- Employee 1
@@ -285,7 +285,7 @@ VALUES
 (5, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (5, '2024-04-09 00:00:00', NULL, 'leave'),
 (5, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 6
 (6, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (6, '2024-03-12 09:20:00', '2024-03-12 18:00:00', 'present'),
 (6, '2024-03-13 09:00:00', '2024-03-13 18:00:00', 'present'),
@@ -309,7 +309,7 @@ VALUES
 (6, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (6, '2024-04-09 00:00:00', NULL, 'leave'),
 (6, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 7
 (7, '2024-03-11 00:00:00', NULL, 'leave'),
 (7, '2024-03-12 09:00:00', '2024-03-12 18:00:00', 'present'),
 (7, '2024-03-13 09:00:00', '2024-03-13 18:00:00', 'present'),
@@ -333,7 +333,7 @@ VALUES
 (7, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (7, '2024-04-09 00:00:00', NULL, 'leave'),
 (7, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 8
 (8, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (8, '2024-03-12 00:00:00', NULL, 'absent'),
 (8, '2024-03-13 09:00:00', '2024-03-13 18:00:00', 'present'),
@@ -357,7 +357,7 @@ VALUES
 (8, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (8, '2024-04-09 00:00:00', NULL, 'leave'),
 (8, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 9
 (9, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (9, '2024-03-12 09:20:00', '2024-03-12 18:00:00', 'present'),
 (9, '2024-03-13 00:00:00', NULL, 'leave'),
@@ -381,7 +381,7 @@ VALUES
 (9, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (9, '2024-04-09 00:00:00', NULL, 'leave'),
 (9, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 10
 (10, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (10, '2024-03-12 00:00:00', NULL, 'absent'),
 (10, '2024-03-13 09:00:00', '2024-03-13 18:00:00', 'present'),
@@ -405,7 +405,7 @@ VALUES
 (10, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (10, '2024-04-09 00:00:00', NULL, 'leave'),
 (10, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 11
 (11, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (11, '2024-03-12 09:15:00', '2024-03-12 18:00:00', 'present'),
 (11, '2024-03-13 00:00:00', NULL, 'absent'),
@@ -430,7 +430,7 @@ VALUES
 (11, '2024-04-09 00:00:00', NULL, 'leave'),
 (11, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
 
-
+-- Employee 12
 (12, '2024-03-11 00:00:00', NULL, 'leave'),
 (12, '2024-03-12 09:00:00', '2024-03-12 18:00:00', 'present'),
 (12, '2024-03-13 09:00:00', '2024-03-13 18:00:00', 'present'),
@@ -454,7 +454,7 @@ VALUES
 (12, '2024-04-08 09:10:00', '2024-04-08 18:00:00', 'present'),
 (12, '2024-04-09 00:00:00', NULL, 'leave'),
 (12, '2024-04-10 09:00:00', '2024-04-10 18:00:00', 'present'),
-
+-- Employee 13
 (13, '2024-03-11 09:00:00', '2024-03-11 18:00:00', 'present'),
 (13, '2024-03-12 09:20:00', '2024-03-12 18:00:00', 'present'),
 (13,  NULL, NULL, 'leave'),
